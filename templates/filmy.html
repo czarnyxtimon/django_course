@@ -19,8 +19,8 @@
     {% else %}
         <h2>Ilosc filmow w DB: {{ filmy|length }}</h2>
         {%  for film in filmy %}
-    {#        <p>{{ film }}</p>#}
-            <p>{{ film.tytul }}</p>
+            <h3>{{ film }}</h3>
+            <p>{{ film.opis }}</p>
         {% endfor %}
     {% endif %}
 </body>

@@ -7,7 +7,13 @@ from .models import Film
 def wszystkie_filmy(request):
     # return HttpResponse("<h1>To jest nasz pierwszy test</h1>")
     # test = ["avatar", "titanic"]
+
+    # read>
     wszystkie = Film.objects.all()
+    # wszystkie = Film.objects.get(id=1)
+    # wszystkie = Film.objects.filter(id=1)
+    # <read
+
     # jeden = Film.objects.get(tytul='Titanic')
     # jeden = Film.objects.filter(tytul='Titanic')
 
@@ -21,5 +27,7 @@ def wszystkie_filmy(request):
     # lub
     # Film.objects.get(id=5).delete()
 
+    # dla get trzeba dac nawiassy []
+    # return render(request, 'filmy.html', {'filmy': [wszystkie]})
     return render(request, 'filmy.html', {'filmy': wszystkie})
 
