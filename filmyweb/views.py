@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def test_response(request):
-    return HttpResponse("To jest nasz pierwszy test")
+    return HttpResponse("<h1>To jest nasz pierwszy test</h1>")
