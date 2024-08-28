@@ -9,5 +9,10 @@
 </head>
 <body>
     <h2>Tu beda filmy</h2>
+{#    <h3>{{ text }}</h3>#}
+    {%  for film in filmy %}
+{#        <p>{{ film }}</p>#}
+        <p>{{ film.tytul }}</p>
+    {% endfor %}
 </body>
 </html>
