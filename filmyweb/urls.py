@@ -1,7 +1,7 @@
 from django.urls import path
-from filmyweb.views import test_response
+from filmyweb.views import wszystkie_filmy
 
 
 urlpatterns = [
-    path('test/', test_response)
+    path('wszystkie/', wszystkie_filmy)
 ]

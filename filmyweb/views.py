@@ -3,5 +3,6 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def test_response(request):
-    return HttpResponse("<h1>To jest nasz pierwszy test</h1>")
+def wszystkie_filmy(request):
+    # return HttpResponse("<h1>To jest nasz pierwszy test</h1>")
+    return render(request, 'filmy.html')
