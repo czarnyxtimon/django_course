@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('filmy/', include('filmyweb.urls'))
-]
+    # wersja na prod -> https://docs.djangoproject.com/en/5.1/howto/static-files/deployment/
+    # wersja na development -> https://docs.djangoproject.com/en/5.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
