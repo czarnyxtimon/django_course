@@ -8,11 +8,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Tu beda filmy</h2>
+{#The Django template language#}
 {#    <h3>{{ text }}</h3>#}
-    {%  for film in filmy %}
-{#        <p>{{ film }}</p>#}
-        <p>{{ film.tytul }}</p>
-    {% endfor %}
+
+    {% if filmy|length == 0 %}
+        <h2>Brak filmow</h2>
+    {% else %}
+        <h2>Ilosc filmow w DB: {{ filmy|length }}</h2>
+        {%  for film in filmy %}
+    {#        <p>{{ film }}</p>#}
+            <p>{{ film.tytul }}</p>
+        {% endfor %}
+    {% endif %}
 </body>
 </html>
