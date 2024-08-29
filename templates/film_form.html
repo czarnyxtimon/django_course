@@ -3,7 +3,7 @@
 {% block tytul %} Formularz Film {% endblock %}
 
 {% block strona %}
-    <div class="card" style="width: 32rem;">
+    <div class="card" style="width: 32rem; float: left; margin-right: 1rem;">
       <div class="card-body">
       {% if nowy %}
         <h5 class="card-title">Nowy film</h5>
@@ -24,6 +24,24 @@
           </form>
       </div>
     </div>
+
+     <div class="card" style="width: 32rem; float: left; margin-right: 1rem;">
+      <div class="card-body">
+        <h5 class="card-title">Oceń film</h5>
+
+          <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form_ocena|bootstrap }}
+          <br>
+                <button type="submit" class="btn btn-primary">Oceń</button>
+          </form>
+      </div>
+    </div>
+
+    {% for ocena in oceny %}
+        <h4>Gwiazdki: {{ ocena.gwiazdki }}</h4>
+        <p>{{ ocena.recenzja }}</p>
+    {% endfor %}
 
     <a href="{% url 'wszystkie' %}">Cofnij</a>
 {% endblock %}

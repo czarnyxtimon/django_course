@@ -32,7 +32,7 @@ class Film(models.Model):
 
 
 class Ocena(models.Model):
-    opis = models.TextField(default="", blank=True)
+    recenzja = models.TextField(default="", blank=True)
     gwiazdki = models.PositiveSmallIntegerField(default=5)
     film = models.ForeignKey(Film, on_delete=models.CASCADE)
 
