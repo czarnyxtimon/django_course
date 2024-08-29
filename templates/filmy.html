@@ -15,6 +15,10 @@
 {#    <h3>{{ text }}</h3>#}
 
 <a href="{% url 'nowy_film' %}">Nowy film</a>
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
 
     {% if filmy|length == 0 %}
         <h2>Brak filmow</h2>
