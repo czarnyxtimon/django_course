@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'filmyweb',
+    'projekty.filmyweb',
     'bootstrapform',
     'rest_framework',
 ]
@@ -52,12 +52,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'filmy.urls'
+ROOT_URLCONF = 'projekty.filmy.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['projekty\\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,10 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = ['moje_static']
+STATICFILES_DIRS = ['projekty/moje_static']
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = 'moje_media'
+MEDIA_ROOT = 'projekty/moje_media'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'wszystkie'
