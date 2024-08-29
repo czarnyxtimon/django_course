@@ -29,20 +29,20 @@
     {% else %}
 {#        <h2>Ilosc filmow w DB: {{ filmy|length }}</h2>#}
         {%  for film in filmy %}
-            <div class="card" style="width: 26rem;">
-{#              <img src="..." class="card-img-top" alt="...">#}
+            <div class="card">
               <div class="card-body">
+                <img src="/media/{{ film.plakat }}" class="film-plakat">
                 <div class="row">
                     <div class="col-9">
                         <h5 class="card-title">{{ film }}</h5>
                     </div>
                     <div class="col-3">
-                        <a href="{% url 'edit_film' film.id %}"><i class="fa-solid fa-2x fa-pen-to-square"></i></a>
-                        <a href="{% url 'usun_film' film.id %}"><i class="fa-solid fa-2x fa-trash-can"></i></a>
+                        <a href="{% url 'edit_film' film.id %}"><i class="fa-solid fa-2x fa-pen-to-square film-icon"></i></a>
+                        <a href="{% url 'usun_film' film.id %}"><i class="fa-solid fa-2x fa-trash-can film-icon"></i></a>
                     </div>
                 </div>
                 <div class="row">
-                    <p class="card-text">{{ film.opis }}</p>
+                    <p class="card-text opis">{{ film.opis }}</p>
                 </div>
               </div>
             </div>
