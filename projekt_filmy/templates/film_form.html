@@ -24,7 +24,7 @@
           </form>
       </div>
     </div>
-
+ {% if nowy == False %}
      <div class="card" style="width: 32rem; float: left; margin-right: 1rem;">
       <div class="card-body">
         <h5 class="card-title">Oceń film</h5>
@@ -37,6 +37,7 @@
           </form>
       </div>
     </div>
+{% endif %}
 
     {% for ocena in oceny %}
         <h4>Gwiazdki: {{ ocena.gwiazdki }}</h4>
