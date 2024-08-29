@@ -1,5 +1,5 @@
 from django.urls import path
-from projekty.filmyweb.views import wszystkie_filmy, nowy_film, edytuj_film, usun_film
+from projekt_filmy.filmyweb.views import wszystkie_filmy, nowy_film, edytuj_film, usun_film
 
 
 urlpatterns = [

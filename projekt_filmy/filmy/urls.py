@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from rest_framework import routers
-from projekty.filmyweb.views import UserView, FilmView
+from projekt_filmy.filmyweb.views import UserView, FilmView
 
 
 router = routers.DefaultRouter()
@@ -29,7 +29,7 @@ router.register(r'filmy', FilmView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('filmy/', include('projekty.filmyweb.urls')),
+    path('filmy/', include('projekt_filmy.filmyweb.urls')),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),

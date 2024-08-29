@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class FilmywebConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'projekty.filmyweb'
+    name = 'projekt_filmy.filmyweb'

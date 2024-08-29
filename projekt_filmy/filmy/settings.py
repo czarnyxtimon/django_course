@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
+from dj_database_url import parse as db_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gb7340ms_g(15jz0mep!5pta=l@dyam^_fvymk6m9%w!su2in='
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -37,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'projekty.filmyweb',
+    'projekt_filmy.filmyweb',
     'bootstrapform',
     'rest_framework',
 ]
@@ -52,12 +54,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'projekty.filmy.urls'
+ROOT_URLCONF = 'projekt_filmy.filmy.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['projekty\\templates'],
+        'DIRS': ['projekt_filmy\\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,10 +121,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = ['projekty/moje_static']
+STATICFILES_DIRS = ['projekt_filmy/moje_static']
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = 'projekty/moje_media'
+MEDIA_ROOT = 'projekt_filmy/moje_media'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'wszystkie'
