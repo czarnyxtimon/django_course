@@ -19,6 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from rest_framework import routers
+from filmyweb.views import UserView, FilmView
+
+
+router = routers.DefaultRouter()
+router.register(r'users', UserView)
+router.register(r'filmy', FilmView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +34,5 @@ urlpatterns = [
     # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     # wersja na prod -> https://docs.djangoproject.com/en/5.1/howto/static-files/deployment/
+    path('', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # wersja na development -> https://docs.djangoproject.com/en/5.1/howto/static-files/#serving-files-uploaded-by-a-user-during-development
